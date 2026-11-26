@@ -61,6 +61,18 @@ uvicorn app.main:app --reload
 
 Documentación interactiva: http://127.0.0.1:8000/docs
 
+### Organización del proyecto
+
+- `frontend/public/`: archivos estáticos públicos.
+- `frontend/src/`: estilos en `styles/`; las carpetas `assets/`, `components/`, `pages/`, `layouts/`, `services/`, `hooks/`, `context/` y `utils/` están listas para organizar la interfaz por responsabilidad.
+- `backend/app/routers/`: endpoints agrupados por dominio.
+- `backend/app/models/` y `backend/app/schemas/`: modelos de base de datos y contratos de API.
+- `backend/app/services/`: lógica compartida de aplicación.
+- `backend/app/core/` y `backend/app/utils/`: dependencias y utilidades transversales.
+- `backend/app/database.py` y `backend/app/main.py`: conexión a la base de datos y composición de FastAPI.
+
+El punto de entrada de la API sigue siendo `app.main:app`; no cambian las rutas públicas.
+
 ## 3. Ejecutar el frontend
 Abre otra terminal, entra en `frontend` e instala Node.js si aún no lo tienes.
 
